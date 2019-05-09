@@ -3,10 +3,10 @@
 namespace Modules\IssueTracker\Tests\Feature;
 
 use App\User;
+use App\Issue;
 use Tests\TestCase;
 use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Mail;
-use Modules\IssueTracker\Entities\Issue;
 use Modules\IssueTracker\Emails\NewIssue;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Modules\IssueTracker\Http\Controllers\IssueController;
