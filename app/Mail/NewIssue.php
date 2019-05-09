@@ -27,6 +27,17 @@ class NewIssue extends Mailable
         $this->user = $user; //quem recebe o email
     }
 
+    public function setIssue(Issue $issue)
+    {
+        $this->issue = $issue;
+    }
+
+
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+    }
+
     /**
      * Build the message.
      *

@@ -22,10 +22,13 @@ class EmailTest extends TestCase
     {
         Mail::fake();
 
-        Mail::assertSent(NewIssue::class, function($mail) {
-            //$destinatario = (new User)->find(1)->first();
-            //$issue = (new Issue)->find(1)->first();
-            //$build = $mail->build();
+        $issue = (new Issue)->find(1)->first();
+        $destinatario = (new User)->find(1)->first();
+
+        Mail::assertSent(NewIssue::class, function($mail) use($destinatario, $issue) {
+            $mail->setIssue($issue);
+            $mail->setUser($destinatario);
+            $build = $mail->build();
 
             //return $build->hasTo($destinatario->email);
         });
